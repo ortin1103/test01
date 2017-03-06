@@ -1,0 +1,29 @@
+DROP DATABASE IF EXISTS StudentAndPassport;
+CREATE DATABASE StudentAndPassport CHARSET = utf8 COLLATE = utf8_general_ci;
+USE StudentAndPassport;
+CREATE TABLE Student(
+  studentIid INT AUTO_INCREMENT PRIMARY KEY,
+  firstName VARCHAR(50) NOT NULL ,
+  secondName VARCHAR(50) NOT NULL
+) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+
+CREATE TABLE Passport(
+  id INT NOT NULL AUTO_INCREMENT,
+  kode VARCHAR(45) NOT NULL,
+  PRIMARY KEY(id),
+  FOREIGN KEY(id) REFERENCES Student(studentIid)
+    ON UPDATE CASCADE
+) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+
+
+INSERT INTO Student VALUES (1,'Serg','First');
+INSERT INTO Student VALUES (2,'Alex','Second');
+INSERT INTO Student VALUES (3,'Ury','SDS');
+INSERT INTO Student VALUES (4,'ADSAdSA','AVGDsd');
+
+INSERT INTO Passport VALUES (1,'aad446');
+INSERT INTO Passport VALUES (2,'56876456');
+INSERT INTO Passport VALUES (3,'89562');
+INSERT INTO Passport VALUES (4,'465545');
+
+SELECT  studentIid, firstName, secondName, Passport.kode FROM Student, Passport WHERE studentIid=Passport.id

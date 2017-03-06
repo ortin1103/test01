@@ -6,14 +6,12 @@ import javax.persistence.*;
 @Entity
 @Table(name = "passport")
 public class Passport {
-    @Id
-    @GeneratedValue
-    @Column(name = "passport_id")
+
     private long id;
 
     String passport;
 
-    public Passport() {
+    protected Passport() {
     }
 
     public Passport(String passporld) {

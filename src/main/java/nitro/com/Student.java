@@ -15,9 +15,9 @@ public class Student {
 
     @OneToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="id_passport")
-            private Set<Passport> passports;
+    private Set<Passport> passports;
 
-    public Student() {
+    protected Student() {
     }
 
     public Student(String firstName, String secondName) {
