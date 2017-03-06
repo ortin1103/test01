@@ -5,13 +5,14 @@ import javax.persistence.*;
 
 @Entity
 public class Passport {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     String kod;
 
-    protected Passport() {
+    public Passport() {
     }
 
     public Passport(String kod) {
@@ -34,8 +35,13 @@ public class Passport {
         this.kod = kod;
     }
 
-    public String toString(){
-        return getKod();
+
+    @Override
+    public String toString() {
+        return "Passport{" +
+                "id=" + id +
+                ", kod='" + kod + '\'' +
+                '}';
     }
 }
 

@@ -4,8 +4,8 @@ import javax.persistence.*;
 
 
 @Entity
-
 public class Student {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
@@ -13,18 +13,18 @@ public class Student {
     private String firstName;
     private String secondName;
 
-    Passport passport;
+    @OneToOne
+    private Passport passport;
 
-  @OneToOne
-  Passport getPassport(){
+    Passport getPassport(){
       return this.passport;
-  }
+    }
 
     public void setPassport(Passport passport) {
         this.passport = passport;
     }
 
-    protected Student() {
+    public Student() {
     }
 
     public Student(String firstName, String secondName) {
@@ -49,8 +49,22 @@ public class Student {
     public void setSecondName(String secondName) {
         this.secondName = secondName;
     }
-    public String toString(){
-        return "[ "+getFirstName()+" , "+getSecondName();
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", secondName='" + secondName + '\'' +
+                ", passport=" + passport +
+                '}';
     }
 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 }
