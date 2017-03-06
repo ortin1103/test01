@@ -4,25 +4,35 @@ package nitro.com;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "passport")
 public class Passport {
-
+    @Id
     private long id;
 
-    String passport;
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    String kode;
 
     protected Passport() {
     }
 
-    public Passport(String passporld) {
-        this.passport = passporld;
+    public Passport(String kode) {
+        this.kode = kode;
     }
 
-    public String getPassporld() {
-        return passport;
+    public String getKode() {
+        return kode;
     }
 
-    public void setPassport(String passport) {
-        this.passport = passport;
+    public void setKode(String kode) {
+        this.kode = kode;
     }
 }
+
+
+

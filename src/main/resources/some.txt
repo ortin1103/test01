@@ -27,3 +27,4 @@ INSERT INTO Passport VALUES (3,'89562');
 INSERT INTO Passport VALUES (4,'465545');
 
 SELECT  studentIid, firstName, secondName, Passport.kode FROM Student, Passport WHERE studentIid=Passport.id
+

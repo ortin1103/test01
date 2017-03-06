@@ -1,21 +1,17 @@
 package nitro.com;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
 
 
 @Entity
-@Table(name = "student")
+
 public class Student {
     @Id
-    @Column(name="id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     @OneToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="id_passport")
-    private Set<Passport> passports;
+    private Passport passports;
 
     protected Student() {
     }
@@ -46,10 +42,9 @@ public class Student {
     public String toString(){
         return "[ "+getFirstName()+" , "+getSecondName();
     }
-    public void setPassports(Passport passport){
-        if(passports == null) passports = new HashSet<Passport>();
-        passports.add(passport);
-
+    public void addPassports(String passport){
+        if(passports == null) passports = new Passport();
+        passports.setKode(passport);
 
     }
 }
