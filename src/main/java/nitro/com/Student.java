@@ -9,13 +9,20 @@ public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    String firstName;
-    String secondName;
+
+    private String firstName;
+    private String secondName;
+
+    Passport passport;
 
   @OneToOne
-  Passport getId;
+  Passport getPassport(){
+      return this.passport;
+  }
 
-    long passport_id;
+    public void setPassport(Passport passport) {
+        this.passport = passport;
+    }
 
     protected Student() {
     }

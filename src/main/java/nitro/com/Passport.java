@@ -6,8 +6,17 @@ import javax.persistence.*;
 @Entity
 public class Passport {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+
+    String kod;
+
+    protected Passport() {
+    }
+
+    public Passport(String kod) {
+        this.kod = kod;
+    }
 
     public long getId() {
         return id;
@@ -17,21 +26,16 @@ public class Passport {
         this.id = id;
     }
 
-    private String kode;
-
-    protected Passport() {
+    public String getKod() {
+        return kod;
     }
 
-    public Passport(String kode) {
-        this.kode = kode;
+    public void setKod(String kod) {
+        this.kod = kod;
     }
 
-    public String getKode() {
-        return kode;
-    }
-
-    public void setKode(String kode) {
-        this.kode = kode;
+    public String toString(){
+        return getKod();
     }
 }
 
