@@ -5,9 +5,10 @@ import javax.persistence.*;
 
 @Entity
 public class Passport {
-
+    @Id
+    @GeneratedValue
     private long id;
-@Id
+
     public long getId() {
         return id;
     }
@@ -16,7 +17,7 @@ public class Passport {
         this.id = id;
     }
 
-    String kode;
+    private String kode;
 
     protected Passport() {
     }

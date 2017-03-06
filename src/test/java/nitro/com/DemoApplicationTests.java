@@ -26,10 +26,10 @@ public class DemoApplicationTests {
 
 
 	Student and = new Student("Andrey", "First");
-	and.addPassport("KO 454378424347");
+	and.getId("KO 454378424347");
 
 	Student ser = new Student("Sergey", "Second");
-	ser.addPassport("KO 698456143546");
+	ser.getId("KO 698456143546");
 	studentRepo.save(Arrays.asList(and,ser));
 
 

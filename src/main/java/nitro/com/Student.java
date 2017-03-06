@@ -9,9 +9,13 @@ public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+    String firstName;
+    String secondName;
 
-    @OneToOne(fetch=FetchType.LAZY)
-    private Passport passports;
+  @OneToOne
+  Passport getId;
+
+    long passport_id;
 
     protected Student() {
     }
@@ -21,8 +25,7 @@ public class Student {
         this.secondName = secondName;
     }
 
-    String firstName;
-    String secondName;
+
 
     public String getFirstName() {
         return firstName;
@@ -42,9 +45,5 @@ public class Student {
     public String toString(){
         return "[ "+getFirstName()+" , "+getSecondName();
     }
-    public void addPassport(String kodePassport){
-        if(passports == null) passports = new Passport();
-        passports.setKode(kodePassport);
 
-    }
 }
