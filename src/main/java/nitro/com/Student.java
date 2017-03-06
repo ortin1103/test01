@@ -42,9 +42,9 @@ public class Student {
     public String toString(){
         return "[ "+getFirstName()+" , "+getSecondName();
     }
-    public void addPassport(String passport){
+    public void addPassport(String kodePassport){
         if(passports == null) passports = new Passport();
-        passports.setKode(passport);
+        passports.setKode(kodePassport);
 
     }
 }

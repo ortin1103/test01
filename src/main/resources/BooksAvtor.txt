@@ -1,0 +1,23 @@
+DROP DATABASE AvtorBooking;
+CREATE DATABASE AvtorBooking CHARSET = utf8 COLLATE = utf8_general_ci;
+USE AvtorBooking;
+
+CREATE TABLE Avtor(
+  id INT NOT NULL PRIMARY KEY ,
+  name VARCHAR(50) NOT NULL ,
+  secondName VARCHAR(50) NOT NULL
+)ENGINE = InnoDB DEFAULT CHARSET = utf8;
+
+
+CREATE TABLE Books(
+  id INT NOT NULL PRIMARY KEY ,
+  title VARCHAR(255) NOT NULL
+)ENGINE = InnoDB DEFAULT CHARSET = utf8;
+
+CREATE TABLE AvtorBooks(
+  avtor_id INT NOT NULL ,
+  books_id INT NOT NULL ,
+  PRIMARY KEY (avtor_id,books_id),
+  FOREIGN KEY (avtor_id) REFERENCES Avtor(id),
+  FOREIGN KEY (books_id) REFERENCES Books(id)
+)ENGINE = InnoDB DEFAULT CHARSET = utf8;

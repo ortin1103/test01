@@ -5,9 +5,9 @@ import javax.persistence.*;
 
 @Entity
 public class Passport {
-    @Id
-    private long id;
 
+    private long id;
+@Id
     public long getId() {
         return id;
     }
