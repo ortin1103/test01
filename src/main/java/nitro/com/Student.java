@@ -42,7 +42,7 @@ public class Student {
     public String toString(){
         return "[ "+getFirstName()+" , "+getSecondName();
     }
-    public void addPassports(String passport){
+    public void addPassport(String passport){
         if(passports == null) passports = new Passport();
         passports.setKode(passport);
 
